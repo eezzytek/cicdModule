@@ -16,3 +16,6 @@ def read_population_data(file_path):
 
     return countries
 
+# Сортування за площею
+def sort_by_area(countries):
+    return sorted(countries, key=lambda x: x[1])
