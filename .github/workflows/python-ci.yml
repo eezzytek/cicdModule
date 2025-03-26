@@ -26,14 +26,14 @@ jobs:
           python -m pip install --upgrade pip
           pip install -r requirements.txt  # Встановлення залежностей із requirements.txt
 
+      - name: Install PEP8 checker
+        run: pip install pycodestyle
+
       - name: Run tests
         run: |
           cd $GITHUB_WORKSPACE  # Перехід до кореневої директорії
           pytest --maxfail=1 --disable-warnings -q
-
-      - name: Install PEP8 checker
-        run: pip install pycodestyle
-
+      
       - name: Run PEP8 check
         run: |
           pycodestyle --max-line-length=79 .  # Запуск перевірки коду на відповідність PEP8
