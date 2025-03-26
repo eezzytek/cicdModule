@@ -26,13 +26,13 @@ jobs:
           python -m pip install --upgrade pip
           pip install -r requirements.txt  # Встановлення залежностей із requirements.txt
 
+      - name: Run tests
+        run: |
+          pytest --maxfail=1 --disable-warnings -q  # Запуск тестів, зупинка після 1-ї помилки
+
       - name: Install PEP8 checker
         run: pip install pycodestyle
 
       - name: Run PEP8 check
         run: |
           pycodestyle --max-line-length=79 .  # Запуск перевірки коду на відповідність PEP8
-
-      - name: Run tests
-        run: |
-          pytest --maxfail=1 --disable-warnings -q  # Запуск тестів, зупинка після 1-ї помилки
