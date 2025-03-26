@@ -23,3 +23,9 @@ def sort_by_area(countries):
 # Сортування за населенням
 def sort_by_population(countries):
     return sorted(countries, key=lambda x: x[2])
+
+# Виведення даних на екран
+def print_sorted_data(sorted_countries, by="area"):
+    print(f"Сортування за {'площею' if by == 'area' else 'населенням'}:")
+    for country in sorted_countries:
+        print(f"{country[0]} - Площа: {country[1]} кв.км, Населення: {country[2]}")
