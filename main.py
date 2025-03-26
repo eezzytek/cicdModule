@@ -32,7 +32,8 @@ def print_sorted_data(sorted_countries, by="area"):
     sort_type = 'площею' if by == 'area' else 'населенням'
     print(f"Сортування за {sort_type}:")
     for country in sorted_countries:
-        print(f"{country[0]} - Площа: {country[1]} кв.км, Населення: {country[2]}")
+        name, area, population = country
+        print(f"{name} - Площа: {area} кв.км, Населення: {population}")
 
 
 # Вхід в програму
