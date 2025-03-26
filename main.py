@@ -29,3 +29,18 @@ def print_sorted_data(sorted_countries, by="area"):
     print(f"Сортування за {'площею' if by == 'area' else 'населенням'}:")
     for country in sorted_countries:
         print(f"{country[0]} - Площа: {country[1]} кв.км, Населення: {country[2]}")
+
+# Вхід в програму
+def main():
+    file_path = "population_data.txt"
+    countries = read_population_data(file_path)
+
+    sorted_by_area = sort_by_area(countries)
+    print_sorted_data(sorted_by_area, by="area")
+
+    sorted_by_population = sort_by_population(countries)
+    print_sorted_data(sorted_by_population, by="population")
+
+
+if __name__ == "__main__":
+    main()
