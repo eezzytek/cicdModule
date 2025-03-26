@@ -28,7 +28,7 @@ jobs:
 
       - name: Run tests
         run: |
-          pytest --maxfail=1 --disable-warnings -q  # Запуск тестів, зупинка після 1-ї помилки
+          $env:PYTHONPATH="."; pytest --html=report.html --maxfail=1 --disable-warnings -q
 
       - name: Install PEP8 checker
         run: pip install pycodestyle
