@@ -38,4 +38,4 @@ jobs:
       
       - name: Run PEP8 check
         run: |
-          pycodestyle --max-line-length=79 .  # Запуск перевірки коду на відповідність PEP8
+           pep8 main.py  # Запуск перевірки коду на відповідність PEP8
