@@ -18,3 +18,10 @@ def test_sort_by_area(data, expected):
     # Тестуємо сортування за площею
     sorted_data = sort_by_area(data)
     assert sorted_data
+
+def test_sort_by_population(mock_population_data):
+    # Тестуємо сортування за населенням
+    sorted_data = sort_by_population(mock_population_data)
+    assert sorted_data[2][0] == "Німеччина"  # Найбільше населення
+    assert sorted_data[1][0] == "Італія"
+    assert sorted_data[0][0] == "Україна"
