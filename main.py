@@ -16,19 +16,24 @@ def read_population_data(file_path):
 
     return countries
 
+
 # Сортування за площею
 def sort_by_area(countries):
     return sorted(countries, key=lambda x: x[1])
+
 
 # Сортування за населенням
 def sort_by_population(countries):
     return sorted(countries, key=lambda x: x[2])
 
+
 # Виведення даних на екран
 def print_sorted_data(sorted_countries, by="area"):
-    print(f"Сортування за {'площею' if by == 'area' else 'населенням'}:")
+    sort_type = 'площею' if by == 'area' else 'населенням'
+    print(f"Сортування за {sort_type}:")
     for country in sorted_countries:
         print(f"{country[0]} - Площа: {country[1]} кв.км, Населення: {country[2]}")
+
 
 # Вхід в програму
 def main():
@@ -44,3 +49,4 @@ def main():
 
 if __name__ == "__main__":
     main()
+    
